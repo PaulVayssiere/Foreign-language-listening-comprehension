@@ -1,0 +1,33 @@
+<h2>Choose the number of digits to guess</h2>
+
+<form class="form-horizontal" role="form">
+  <div class="form-group {{GenerateWithoutValue}}">
+    <label for="digits" class="col-sm-2 control-label">Number of digits</label>
+    <div class="col-sm-4">
+      <input type="number" class="form-control" id="digits" ng-model="digits" placeholder="number of digits" ng-disabled="!(displayGenerateButton || manager.toDisplayGenerateButton)">
+    </div>
+  </div>
+  <div class="form-group" ng-show="displayAnswerInput">
+    <label for="answer" class="col-sm-2 control-label">Answer</label>
+    <div class="col-sm-4">
+      <input type="text" class="form-control" id="answer" ng-model="valueEntered" placeholder="Answer"> <span class="glyphicon {{ manager.glyphiconToDisplay }}"></span>
+    </div>
+  </div>
+</form>
+
+
+
+  <div >
+     <br><br>
+  </div>
+
+
+    <div ng-bind-html="HTML5AudioPlayer"></div>
+
+    <button ng-show="displayAnswerButton && manager.toDisplayGiveMeTheAnswerButton" type="button" class="btn btn-primary" ng-click="clickOnAnswerButton()">Give me the answer!</button>
+    <p ng-show="manager.toDisplayAnswer">The answer was: {{itemToFind}}</p>
+
+    <button ng-show="displayGenerateButton || manager.toDisplayGenerateButton" type="button" class="btn btn-primary" ng-click="clickOnGenerateButton()">Generate</button><br><br>
+
+
+    <p>{{itemToFind}}</p>
