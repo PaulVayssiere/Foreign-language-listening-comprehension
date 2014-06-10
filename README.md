@@ -62,14 +62,14 @@ Workflow
 Watch, Compile, Serve and LiveReload
 
 ```bash
-$ grunt server
+$ grunt serve
 ```
 
 ### In prodution
 
 ```bash
 grunt build
-grunt server-dist
+grunt serve:dist
 ```
 
 ### To install dependencies for NodeJS and JavaScript
