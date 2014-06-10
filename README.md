@@ -14,11 +14,10 @@ It uses:
 TODO:
 -----
 * Bug: insert an html audio tag that read automatically (I don't know why it doesn't work. It did work but idk what happened)
-
 * Bug: Angular provider (config: an url for a the text-to-speech API). I currently use the Google translate text-to-speech.
 
+* Add some tests (like in the main AngularJS tutorial)
 * Finish the part with the letters
-
 * Add all alpha-numeric languages.
 
 Installation
@@ -65,10 +64,15 @@ Watch, Compile, Serve and LiveReload
 $ grunt serve
 ```
 
-### In prodution
+### Prodution
 
+To build the compressed files
 ```bash
 grunt build
+```
+
+To run a server with the compressed files
+```bash
 grunt serve:dist
 ```
 
