@@ -16,6 +16,7 @@ angular.module('languageTrainerApp')
   	$scope.GenerateWithoutValue = '';
 		$scope.displaySoundFileLoader = false;
   	$scope.digits = parseInt($scope.digits, 10);
+  	$scope.language = 'en';
 
   	$scope.clickOnGenerateButton = function() {
 	  	if (($scope.digits) && (parseInt($scope.digits, 10).toString().length > 0)) {
@@ -32,7 +33,7 @@ angular.module('languageTrainerApp')
 
 				//$scope.testtext = generators.generateLetters(15);
 		    //$scope.HTML5AudioPlayer = $sce.trustAsHtml(soundgenerator.generatePlayer($scope.itemToFind)); //with the provider
-		    $scope.soundSelect($scope.itemToFind, $scope); //With the factory
+		    $scope.soundSelect($scope.language, $scope.itemToFind); //With the factory
 	  	}
 	  	else {
 	  		$scope.GenerateWithoutValue = 'has-error';
@@ -45,9 +46,9 @@ angular.module('languageTrainerApp')
   		audio.play();
   	};
 
-    $scope.soundSelect = function(textToRead) {
+    $scope.soundSelect = function(language, textToRead) {
   		$scope.displaySoundFileLoader = true;
-      audio.loadfile(textToRead);
+      audio.loadfile(language, textToRead);
     };
 
   	$scope.clickOnAnswerButton = function() {

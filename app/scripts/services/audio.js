@@ -6,8 +6,8 @@ angular.module('languageTrainerApp').factory('audio',function ($document) {
     audioElement: audioElement,
     audioSrc: null,//See hack for Chrome below
 
-    loadfile: function(textToRead) {
-        this.audioSrc = 'http://paulvayssiere.com/sound.php?tl=en&q='+textToRead;
+    loadfile: function(language, textToRead) {
+        this.audioSrc = 'http://paulvayssiere.com/sound.php?tl='+language+'&q='+textToRead;
         this.play();//and we play it
     },
     play: function() {
