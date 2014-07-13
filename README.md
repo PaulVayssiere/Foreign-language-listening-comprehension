@@ -1,7 +1,14 @@
-numberProject
+Foreign language listening comprehension
 =============
 
 An educational project to improve your comprehension of numbers and letters in a foreign language.
+
+You can use this tool to train yourself on how to recognize numbers (listening comprehension).
+I have noticed that when I am listening to a sentence, and a number pops up, it is hard for me to 'visualize it'.
+With this tool, you can choose a language and train yourself to understand some random numbers.
+
+This project is made with AngularJS, I wanted to learn this framework. Do not hesitate to suggest to me any corrections on how I implemented it.
+
 
 It uses:
 * Compass (Sass)
@@ -13,9 +20,9 @@ It uses:
 
 TODO:
 -----
-* Bug: Angular provider (config: an url for a the text-to-speech API). I currently use the Google translate text-to-speech.
+* Bug: Angular provider (config: an url for a the text-to-speech API). I currently use the Google translate text-to-speech with a personal proxy because they don't allow cross-origin for my ajax calls.
 
-* Use more directives
+* Use more directives !!!
 * Add some tests (like in the main AngularJS tutorial)
 * Finish the part with the letters
 * Add all alpha-numeric languages.
