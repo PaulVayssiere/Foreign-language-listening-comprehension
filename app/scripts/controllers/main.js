@@ -54,8 +54,12 @@ angular.module('languageTrainerApp')
   		$scope.manager = gamemanager.iGiveUp($scope.itemToFind, $scope.valueEntered);
   	};
 
+  	//this shouldn't be here
     audio.audioElement.oncanplaythrough = function () {
-			$scope.$apply(function () { $scope.displaySoundFileLoader = false; $scope.displayAnswerButton = true; });
+			$scope.$apply(function () {
+				$scope.displaySoundFileLoader = false;
+				$scope.displayAnswerButton = true;
+			});
 		};
 
   });
