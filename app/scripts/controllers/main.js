@@ -8,7 +8,7 @@
  * Controller of the languageTrainerApp
  */
 angular.module('languageTrainerApp')
-  .controller('MainCtrl', function ($scope, $sce, soundgenerator, generators, gamemanager) {
+  .controller('MainCtrl', function ($scope, $sce, soundgenerator, generators, gamemanager, audio) {
 
   	$scope.displayAnswerInput = false;
   	$scope.displayAnswerButton = false;
@@ -31,12 +31,17 @@ angular.module('languageTrainerApp')
 				});
 
 				//$scope.testtext = generators.generateLetters(15);
-		    $scope.HTML5AudioPlayer = $sce.trustAsHtml(soundgenerator.generatePlayer($scope.itemToFind));
+		    $scope.HTML5AudioPlayer = $sce.trustAsHtml(soundgenerator.generatePlayer($scope.itemToFind)); //with the provider
+		    //$scope.songSelect($scope.itemToFind); //With the factory
 	  	}
 	  	else {
 	  		$scope.GenerateWithoutValue = 'has-error';
 	  	}
   	};
+
+    $scope.songSelect = function(songPath) {
+        audio.play(songPath);
+    };
 
   	$scope.clickOnAnswerButton = function() {
   		$scope.manager = gamemanager.iGiveUp($scope.itemToFind, $scope.valueEntered);
