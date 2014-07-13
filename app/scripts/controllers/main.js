@@ -14,15 +14,15 @@ angular.module('languageTrainerApp')
   	$scope.displayAnswerButton = false;
   	$scope.displayGenerateButton = true;
   	$scope.GenerateWithoutValue = '';
-
+		$scope.displaySoundFileLoader = false;
   	$scope.digits = parseInt($scope.digits, 10);
 
   	$scope.clickOnGenerateButton = function() {
 	  	if (($scope.digits) && (parseInt($scope.digits, 10).toString().length > 0)) {
 	  		$scope.GenerateWithoutValue = '';
 	  		$scope.displayAnswerInput = true;
-		  	$scope.displayAnswerButton = true;
 		  	$scope.displayGenerateButton = false;
+		  	$scope.displaySoundFileLoader = true;
 				$scope.itemToFind = generators.generateANumber($scope.digits);
 				$scope.valueEntered = '';
 
@@ -31,20 +31,31 @@ angular.module('languageTrainerApp')
 				});
 
 				//$scope.testtext = generators.generateLetters(15);
-		    $scope.HTML5AudioPlayer = $sce.trustAsHtml(soundgenerator.generatePlayer($scope.itemToFind)); //with the provider
-		    //$scope.songSelect($scope.itemToFind); //With the factory
+		    //$scope.HTML5AudioPlayer = $sce.trustAsHtml(soundgenerator.generatePlayer($scope.itemToFind)); //with the provider
+		    $scope.soundSelect($scope.itemToFind, $scope); //With the factory
 	  	}
 	  	else {
 	  		$scope.GenerateWithoutValue = 'has-error';
 	  	}
   	};
 
-    $scope.songSelect = function(songPath) {
-        audio.play(songPath);
+  	$scope.playbutton = function() {
+  		$scope.displaySoundFileLoader = true;
+  		$scope.displayAnswerButton = false;
+  		audio.play();
+  	};
+
+    $scope.soundSelect = function(textToRead) {
+  		$scope.displaySoundFileLoader = true;
+      audio.loadfile(textToRead);
     };
 
   	$scope.clickOnAnswerButton = function() {
   		$scope.manager = gamemanager.iGiveUp($scope.itemToFind, $scope.valueEntered);
   	};
+
+    audio.audioElement.oncanplaythrough = function () {
+			$scope.$apply(function () { $scope.displaySoundFileLoader = false; $scope.displayAnswerButton = true; });
+		};
 
   });
