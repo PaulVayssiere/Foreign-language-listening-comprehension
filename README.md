@@ -13,9 +13,9 @@ It uses:
 
 TODO:
 -----
-* Bug: insert an html audio tag that read automatically (I don't know why it doesn't work. It did work but idk what happened)
 * Bug: Angular provider (config: an url for a the text-to-speech API). I currently use the Google translate text-to-speech.
 
+* Use more directives
 * Add some tests (like in the main AngularJS tutorial)
 * Finish the part with the letters
 * Add all alpha-numeric languages.
@@ -38,7 +38,7 @@ $ brew install node
 ### Yeoman [(site)](http://yeoman.io/)
 
 ```bash
-$ npm install -g yo grunt-cli bower 
+$ npm install -g yo grunt-cli bower
 ```
 
 ### Tips:
