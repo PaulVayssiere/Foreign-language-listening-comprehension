@@ -9,6 +9,7 @@ With this tool, you can choose a language and train yourself to understand some 
 
 This project is made with AngularJS, I wanted to learn this framework. Do not hesitate to suggest to me any corrections on how I implemented it.
 
+You can see it running [here](http://paulvayssiere.com/foreign-language-listening-comprehension)
 
 It uses:
 * Compass (Sass)
