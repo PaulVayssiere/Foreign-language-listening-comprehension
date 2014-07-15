@@ -2,6 +2,7 @@
 
 angular.module('languageTrainerApp').factory('gamemanager', function(){
 
+    //TODO: Split this in a gameManager and a gameInterpretor
     var glyphicons = {
         'isValid' : {
             'glyphicon': 'glyphicon-ok',
