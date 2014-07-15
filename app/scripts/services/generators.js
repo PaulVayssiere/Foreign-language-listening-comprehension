@@ -12,6 +12,14 @@ angular.module('languageTrainerApp').factory('generators', function(){
     return {
         'generateANumber': function(numberOfDigits){
             var res = '';
+
+            //TODO HERE: Use the range from the selectbox
+            if (numberOfDigits === 'random') {
+                var max = 7;//horrible, I have ot change that
+                var min = 2;
+                numberOfDigits = Math.floor(Math.random() * (max - min + 1)) + min;
+            }
+
             for (var i = 0; i < numberOfDigits; i++)
             {
                 res += Math.floor((Math.random() * 10)).toString();
