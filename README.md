@@ -17,6 +17,7 @@ It uses:
 * Yo
 * Grunt
 * Bower
+* AngularJS
 * Bootstrap
 * jshint
 
