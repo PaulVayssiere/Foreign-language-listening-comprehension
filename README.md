@@ -1,13 +1,14 @@
 Foreign language listening comprehension
 =============
 
-An educational project to improve your comprehension of numbers and letters in a foreign language.
+An educational project to improve your comprehension of numbers (and soon words) in a foreign language.
 
 You can use this tool to train yourself on how to recognize numbers (listening comprehension).
+
 I have noticed that when I am listening to a sentence, and a number pops up, it is hard for me to 'visualize it'.
 With this tool, you can choose a language and train yourself to understand some random numbers.
 
-This project is made with AngularJS, I wanted to learn this framework. Do not hesitate to suggest to me any corrections on how I implemented it.
+This project is made with AngularJS, I wanted to learn this framework. Do not hesitate to suggest to me any corrections on how I implemented it. I search some help on how write it in "the good way" (especially with the directive and split into more independant engines with dependency injection)
 
 You can see it running [here](http://paulvayssiere.com/foreign-language-listening-comprehension)
 
@@ -31,19 +32,19 @@ TODO:
 Installation
 ------------
 
-### HomeBrew [(site)](http://mxcl.github.com/homebrew/)
+### Install HomeBrew [(site)](http://mxcl.github.com/homebrew/) (MacOS only)
 
 ```bash
 $ ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 ```
 
-### NodeJS [(site)](http://nodejs.org/)
+### Install NodeJS [(site)](http://nodejs.org/)
 
 ```bash
 $ brew install node
 ```
 
-### Yeoman [(site)](http://yeoman.io/)
+### Install (globally with -g, else without) Yeoman (Yo + Grunt + Bower) [(site)](http://yeoman.io/)
 
 ```bash
 $ npm install -g yo grunt-cli bower
@@ -60,6 +61,16 @@ then:
 ```bash
 npm install -g yo
 ```
+
+### Then clone the Git repo
+
+### Go in the project and, to install JavaScript dependencies:
+
+```bash
+$ npm install
+$ bower install --dev
+```
+
 
 Workflow
 --------
@@ -82,12 +93,5 @@ grunt build
 To run a server with the compressed files
 ```bash
 grunt serve:dist
-```
-
-### To install dependencies for NodeJS and JavaScript
-
-```bash
-$ npm install
-$ bower install --dev
 ```
 
