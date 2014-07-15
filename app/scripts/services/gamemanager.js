@@ -3,9 +3,18 @@
 angular.module('languageTrainerApp').factory('gamemanager', function(){
 
     var glyphicons = {
-        'isValid' : 'glyphicon-ok',
-        'isFalse' : 'glyphicon-remove',
-        'isOnTheWay' : 'glyphicon-thumbs-up'
+        'isValid' : {
+            'glyphicon': 'glyphicon-ok',
+            'formHighlighting': 'has-success'
+        },
+        'isFalse' : {
+            'glyphicon': 'glyphicon-remove',
+            'formHighlighting': 'has-error'
+        },
+        'isOnTheWay' : {
+            'glyphicon': 'glyphicon-thumbs-up',
+            'formHighlighting': 'has-success'
+        }
     };
 
     function whichGlyphiconToDisplay (itemToFind, valueEntered, glyphicons) {

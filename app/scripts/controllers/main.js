@@ -17,6 +17,7 @@ angular.module('languageTrainerApp')
 		$scope.displaySoundFileLoader = false;
   	$scope.digits = parseInt($scope.digits, 10);
   	$scope.language = 'en';
+    $scope.digits = 3;
 
   	$scope.clickOnGenerateButton = function() {
 	  	if (($scope.digits) && (parseInt($scope.digits, 10).toString().length > 0)) {

@@ -1,6 +1,5 @@
-<h2>Choose the number of digits to guess</h2>
-
 <form class="form-horizontal" role="form">
+  <h4>1)Choose the language you want to train</h4>
   <div class="form-group ">
     <label for="digits" class="col-sm-2 control-label">Language</label>
     <div class="col-sm-4">
@@ -72,32 +71,46 @@
       </select>
     </div>
   </div>
+  <h4>2)Choose the number of digits to guess</h4>
   <div class="form-group {{GenerateWithoutValue}}">
     <label for="digits" class="col-sm-2 control-label">Number of digits</label>
     <div class="col-sm-4">
-      <input type="number" class="form-control" id="digits" ng-model="digits" placeholder="number of digits" ng-disabled="!(displayGenerateButton || manager.toDisplayGenerateButton)">
+        <select class="form-control" id="digits" ng-model="digits" ng-disabled="!(displayGenerateButton || manager.toDisplayGenerateButton)">
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+        </select>
     </div>
   </div>
-  <div class="form-group" ng-show="displayAnswerInput">
+
+
+    <div>
+        <h4>3)Generate a random number when you are ready!</h4>
+        <button ng-disabled="!(displayGenerateButton || manager.toDisplayGenerateButton)" type="button" class="btn btn-primary" ng-click="clickOnGenerateButton()">Generate</button>
+    </div>
+
+
+    <div ng-show="displayAnswerInput && !manager.toDisplayAnswer">
+    <h4>4)Type the number you heard</h4>
+    <div class="form-group {{ manager.glyphiconToDisplay.formHighlighting }} has-feedback">
     <label for="answer" class="col-sm-2 control-label">Answer</label>
     <div class="col-sm-4">
-      <input type="text" class="form-control" id="answer" ng-model="valueEntered" placeholder="Answer"> <span class="glyphicon {{ manager.glyphiconToDisplay }}"></span>
+      <input type="text" class="form-control" id="answer" ng-model="valueEntered" placeholder="Answer"> <span class="glyphicon {{ manager.glyphiconToDisplay.glyphicon }} form-control-feedback"></span>
     </div>
+  </div>
   </div>
 </form>
 
 
-    <!-- with the directive provider soundgenerator: <div ng-bind-html="HTML5AudioPlayer"></div>-->
-
-    <button ng-show="displayGenerateButton || manager.toDisplayGenerateButton" type="button" class="btn btn-primary" ng-click="clickOnGenerateButton()">Generate</button>
-
     <img src="images/loading.gif" ng-show="displaySoundFileLoader"/>
 
-    <div ng-show="displayAnswerButton && manager.toDisplayGiveMeTheAnswerButton">
-    <button type="button" class="btn btn-primary" ng-click="playbutton()">Listen again</button>
-    <br><br>
-    <button type="button" class="btn btn-primary" ng-click="clickOnAnswerButton()">Give me the answer!</button>
-    </div>
+    <br>
+    <button id="listen-again-button" ng-show="displayAnswerButton" type="button" class="btn btn-primary" ng-click="playbutton()">Listen again</button>
+    <br>
+    <button ng-show="displayAnswerButton && manager.toDisplayGiveMeTheAnswerButton" type="button" class="btn btn-primary" ng-click="clickOnAnswerButton()">Give me the answer!</button>
 
     <p ng-show="manager.toDisplayAnswer">The answer was: {{itemToFind}}</p>
 
