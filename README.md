@@ -25,7 +25,7 @@ TODO:
 -----
 * Bug: Angular provider (config: an url for a the text-to-speech API). I currently use the Google translate text-to-speech with a personal proxy because they don't allow cross-origin for my ajax calls.
 
-* Use more directives !!!
+* Use more directives !!! Rewrite everything with more directives and services to split more the code
 * Add some tests (like in the main AngularJS tutorial)
 * Finish the part with the letters
 * Add all alpha-numeric languages.
